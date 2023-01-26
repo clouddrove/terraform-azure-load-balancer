@@ -52,6 +52,7 @@ module "subnet" {
   ]
 }
 
+
 module "load-balancer" {
   source = "../"
 
@@ -61,11 +62,13 @@ module "load-balancer" {
   label_order = ["environment", "name"]
 
   #   Common
-  ip_count            = 1
   enabled             = true
   resource_group_name = module.resource_group.resource_group_name
   location            = module.resource_group.resource_group_location
 
+
+  ## Existing Network Interface
+  network_interace_id = "" ## If Existing Network Interface is allocated then assign value here. e.g. azurerm_network_interface.default[0].id ,azurerm_virtual_machine.example.network_interface_ids[0]
 
 
   # Load Balancer
@@ -75,6 +78,7 @@ module "load-balancer" {
   lb_sku                                 = "Standard"
 
   #   Public IP
+  ip_count            = 1
   allocation_method = "Static"
   sku               = "Standard"
   nat_protocol      = "Tcp"

@@ -49,6 +49,12 @@ variable "ip_count" {
   description = "Number of Public IP Addresses to create."
 }
 
+variable "net_count" {
+  type        = number
+  default     = 0
+  description = "Number of network Addresses to create."
+}
+
 variable "enabled" {
   type        = bool
   default     = false
@@ -90,6 +96,19 @@ variable "delete" {
   default     = "60m"
   description = "Used when deleting the Resource Group."
 }
+
+
+
+## Network Interface
+
+
+variable "network_interace_id" {
+  type        = string
+  default     = ""
+  description = "The ID of Network Interface."
+}
+
+
 
 
 ## Pubilc IP
