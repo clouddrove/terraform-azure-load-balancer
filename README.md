@@ -84,7 +84,8 @@ Here is an example of how you can use this module in your inventory structure:
     resource_group_name = module.resource_group.resource_group_name
     location            = module.resource_group.resource_group_location
 
-
+    # Existing Network Interface
+    network_interace_id = "" ## If Existing Network Interface is allocated then assign value here. e.g. azurerm_network_interface.default[0].id ,azurerm_virtual_machine.example.network_interface_ids[0]
 
     # Load Balancer
     frontend_name                          = "mypublicIP"
@@ -153,6 +154,8 @@ Here is an example of how you can use this module in your inventory structure:
 | managedby | ManagedBy, eg 'CloudDrove' or 'AnmolNagpal'. | `string` | `"anmol@clouddrove.com"` | no |
 | name | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | nat\_protocol | (Required) The protocol of Load Balancer's NAT rule. | `string` | `"Tcp"` | no |
+| net\_count | Number of network Addresses to create. | `number` | `0` | no |
+| network\_interace\_id | The ID of Network Interface. | `string` | `""` | no |
 | public\_ip\_enabled | Whether public IP is enabled. | `bool` | `false` | no |
 | public\_ip\_prefix\_id | If specified then public IP address allocated will be provided from the public IP prefix resource. | `string` | `null` | no |
 | read | Used when retrieving the Resource Group. | `string` | `"5m"` | no |
