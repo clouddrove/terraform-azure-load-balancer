@@ -78,7 +78,7 @@ module "load-balancer" {
   lb_sku                                 = "Standard"
 
   #   Public IP
-  ip_count            = 1
+  ip_count          = 1
   allocation_method = "Static"
   sku               = "Standard"
   nat_protocol      = "Tcp"
