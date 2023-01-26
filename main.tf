@@ -45,7 +45,7 @@ resource "azurerm_public_ip" "default" {
 #Description : Terraform resource to create a Load balancer.
 resource "azurerm_lb" "load-balancer" {
   location            = var.location
-  name                = "load-balancer${module.labels.id}"
+  name                = format("%s-load-balancer", module.labels.id)
   resource_group_name = var.resource_group_name
   edge_zone           = var.edge_zone
   sku                 = var.lb_sku
@@ -76,7 +76,7 @@ resource "azurerm_lb_nat_rule" "load-balancer" {
   backend_port                   = element(var.remote_port[element(keys(var.remote_port), count.index)], 1)
   frontend_ip_configuration_name = var.frontend_name
   loadbalancer_id                = azurerm_lb.load-balancer.id
-  name                           = "VM-${count.index}"
+  name                           = "VM-lb-nat-rule${count.index}"
   protocol                       = var.nat_protocol
   resource_group_name            = var.resource_group_name
   frontend_port                  = "5000${count.index + 1}"
