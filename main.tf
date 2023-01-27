@@ -68,7 +68,6 @@ resource "azurerm_lb" "load-balancer" {
 resource "azurerm_lb_backend_address_pool" "load-balancer" {
   loadbalancer_id = azurerm_lb.load-balancer.id
   name            = var.backendpoolname
-
 }
 
 ## NAT rule for Load Balancer
@@ -111,11 +110,4 @@ resource "azurerm_lb_rule" "load-balancer" {
   enable_floating_ip             = false
   idle_timeout_in_minutes        = 5
   probe_id                       = element(azurerm_lb_probe.load-balancer[*].id, count.index)
-}
-
-resource "azurerm_network_interface_backend_address_pool_association" "default" {
-  count                   = var.network_interace_id != "" ? 1 : 0
-  network_interface_id    = var.network_interace_id
-  ip_configuration_name   = "testconfiguration1"
-  backend_address_pool_id = azurerm_lb_backend_address_pool.load-balancer.id
 }

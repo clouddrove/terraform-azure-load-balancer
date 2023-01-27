@@ -99,18 +99,6 @@ variable "delete" {
 
 
 
-## Network Interface
-
-
-variable "network_interace_id" {
-  type        = string
-  default     = ""
-  description = "The ID of Network Interface."
-}
-
-
-
-
 ## Pubilc IP
 
 variable "public_ip_enabled" {

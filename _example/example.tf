@@ -66,11 +66,6 @@ module "load-balancer" {
   resource_group_name = module.resource_group.resource_group_name
   location            = module.resource_group.resource_group_location
 
-
-  ## Existing Network Interface
-  network_interace_id = "" ## If Existing Network Interface is allocated then assign value here. e.g. azurerm_network_interface.default[0].id ,azurerm_virtual_machine.example.network_interface_ids[0]
-
-
   # Load Balancer
   frontend_name                          = "mypublicIP"
   frontend_private_ip_address_allocation = "Static"
@@ -87,6 +82,7 @@ module "load-balancer" {
 
   remote_port = {
     ssh = ["Tcp", "22"]
+    https = ["Tcp", "80"]
   }
 
   lb_port = {
