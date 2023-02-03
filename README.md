@@ -72,7 +72,7 @@ This module has a few dependencies:
 Here is an example of how you can use this module in your inventory structure:
   ```hcl
   module "load-balancer" {
-    source      = "terraform/load-balancer/azure"
+    source      = "clouddrove/load-balancer/azure"
     version     = "1.0.0"
     name        = "example"
     environment = "test"
@@ -129,6 +129,7 @@ Here is an example of how you can use this module in your inventory structure:
 |------|-------------|------|---------|:--------:|
 | allocation\_method | Defines the allocation method for this IP address. Possible values are Static or Dynamic. | `string` | `""` | no |
 | application | Application (e.g. `cd` or `clouddrove`). | `string` | `""` | no |
+| backend\_address\_pool\_id\_association | (Required) Backend Addrees Pool for Network Interaface Association with Load Balancer. | `string` | `"Tcp"` | no |
 | backendpoolname | (Required) Specifies the name of the Backend Address Pool. Changing this forces a new resource to be created. | `string` | `"test-backendpool"` | no |
 | create | Used when creating the Resource Group. | `string` | `"60m"` | no |
 | ddos\_protection\_mode | (Optional) The DDoS protection mode of the public IP. Possible values are `Disabled`, `Enabled`, and `VirtualNetworkInherited`. Defaults to `VirtualNetworkInherited`. | `string` | `"VirtualNetworkInherited"` | no |
@@ -142,8 +143,10 @@ Here is an example of how you can use this module in your inventory structure:
 | frontend\_private\_ip\_address\_allocation | (Optional) Frontend ip allocation type (Static or Dynamic) | `string` | `"Dynamic"` | no |
 | frontend\_subnet\_id | (Optional) Frontend subnet id to use when in private mode | `string` | `""` | no |
 | idle\_timeout\_in\_minutes | Specifies the timeout for the TCP idle connection. The value can be set between 4 and 60 minutes. | `number` | `10` | no |
+| ip\_configuration\_name\_association | (Required) Ip Configuration name for Network Interaface Association with Load Balancer. | `string` | `"Tcp"` | no |
 | ip\_count | Number of Public IP Addresses to create. | `number` | `0` | no |
 | ip\_version | The IP Version to use, IPv6 or IPv4. | `string` | `""` | no |
+| is\_enable\_backend\_pool | Backend Pool Configuration for the Load Balancer. | `bool` | `false` | no |
 | label\_order | Label order, e.g. `name`,`application`. | `list(any)` | `[]` | no |
 | lb\_port | Protocols to be used for lb rules. Format as [frontend\_port, protocol, backend\_port] | `map(any)` | `{}` | no |
 | lb\_probe | (Optional) Protocols to be used for lb health probes. Format as [protocol, port, request\_path] | `map(any)` | `{}` | no |
@@ -155,6 +158,7 @@ Here is an example of how you can use this module in your inventory structure:
 | name | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | nat\_protocol | (Required) The protocol of Load Balancer's NAT rule. | `string` | `"Tcp"` | no |
 | net\_count | Number of network Addresses to create. | `number` | `0` | no |
+| network\_interaface\_id\_association | (Required) Network Interaface id for Network Interface Association with Load Balancer. | `string` | `"Tcp"` | no |
 | public\_ip\_enabled | Whether public IP is enabled. | `bool` | `false` | no |
 | public\_ip\_prefix\_id | If specified then public IP address allocated will be provided from the public IP prefix resource. | `string` | `null` | no |
 | read | Used when retrieving the Resource Group. | `string` | `"5m"` | no |
