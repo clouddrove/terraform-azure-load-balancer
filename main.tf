@@ -111,3 +111,10 @@ resource "azurerm_lb_rule" "load-balancer" {
   idle_timeout_in_minutes        = 5
   probe_id                       = element(azurerm_lb_probe.load-balancer[*].id, count.index)
 }
+
+resource "azurerm_network_interface_backend_address_pool_association" "default" {
+  count                   = var.is_enable_backend_pool ? 1 : 0
+  network_interface_id    = var.network_interaface_id_association
+  ip_configuration_name   = var.ip_configuration_name_association
+  backend_address_pool_id = var.backend_address_pool_id_association
+}

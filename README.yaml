@@ -38,7 +38,7 @@ usage: |-
   Here is an example of how you can use this module in your inventory structure:
     ```hcl
     module "load-balancer" {
-      source      = "terraform/load-balancer/azure"
+      source      = "clouddrove/load-balancer/azure"
       version     = "1.0.0"
       name        = "example"
       environment = "test"

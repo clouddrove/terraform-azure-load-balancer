@@ -80,6 +80,12 @@ module "load-balancer" {
   public_ip_enabled = true
   ip_version        = "IPv4"
 
+  # Backend Pool
+  is_enable_backend_pool = false
+  network_interaface_id_association = ""
+  ip_configuration_name_association = ""
+  backend_address_pool_id_association = ""
+
   remote_port = {
     ssh = ["Tcp", "22"]
     https = ["Tcp", "80"]

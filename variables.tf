@@ -241,3 +241,29 @@ variable "nat_protocol" {
   type        = string
   default     = "Tcp"
 }
+
+## Load Balancer Backend Pool 
+
+variable "is_enable_backend_pool" {
+  type        = bool
+  default     = false
+  description = "Backend Pool Configuration for the Load Balancer."
+}
+
+variable "network_interaface_id_association" {
+  description = "(Required) Network Interaface id for Network Interface Association with Load Balancer."
+  type        = string
+  default     = "Tcp"
+}
+
+variable "ip_configuration_name_association" {
+  description = "(Required) Ip Configuration name for Network Interaface Association with Load Balancer."
+  type        = string
+  default     = "Tcp"
+}
+
+variable "backend_address_pool_id_association" {
+  description = "(Required) Backend Addrees Pool for Network Interaface Association with Load Balancer."
+  type        = string
+  default     = "Tcp"
+}
