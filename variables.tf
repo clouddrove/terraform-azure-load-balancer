@@ -261,9 +261,3 @@ variable "ip_configuration_name_association" {
   type        = string
   default     = "Tcp"
 }
-
-variable "backend_address_pool_id_association" {
-  description = "(Required) Backend Addrees Pool for Network Interaface Association with Load Balancer."
-  type        = string
-  default     = "Tcp"
-}
