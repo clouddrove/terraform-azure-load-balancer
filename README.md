@@ -100,6 +100,11 @@ Here is an example of how you can use this module in your inventory structure:
     public_ip_enabled = true
     ip_version        = "IPv4"
 
+    # Backend Pool
+    is_enable_backend_pool              = false
+    network_interaface_id_association   = ""
+    ip_configuration_name_association   = ""
+
     remote_port = {
       ssh = ["Tcp", "22"]
     }
@@ -129,7 +134,6 @@ Here is an example of how you can use this module in your inventory structure:
 |------|-------------|------|---------|:--------:|
 | allocation\_method | Defines the allocation method for this IP address. Possible values are Static or Dynamic. | `string` | `""` | no |
 | application | Application (e.g. `cd` or `clouddrove`). | `string` | `""` | no |
-| backend\_address\_pool\_id\_association | (Required) Backend Addrees Pool for Network Interaface Association with Load Balancer. | `string` | `"Tcp"` | no |
 | backendpoolname | (Required) Specifies the name of the Backend Address Pool. Changing this forces a new resource to be created. | `string` | `"test-backendpool"` | no |
 | create | Used when creating the Resource Group. | `string` | `"60m"` | no |
 | ddos\_protection\_mode | (Optional) The DDoS protection mode of the public IP. Possible values are `Disabled`, `Enabled`, and `VirtualNetworkInherited`. Defaults to `VirtualNetworkInherited`. | `string` | `"VirtualNetworkInherited"` | no |
