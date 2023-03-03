@@ -113,8 +113,8 @@ resource "azurerm_lb_rule" "load-balancer" {
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "default" {
-  count                   = var.is_enable_backend_pool ? 1 : 0
-  network_interface_id    = var.network_interaface_id_association
-  ip_configuration_name   = var.ip_configuration_name_association
+  count                   = var.is_enable_backend_pool ? length(var.network_interaface_id_association) : 0
+  network_interface_id    = var.network_interaface_id_association[count.index]
+  ip_configuration_name   = var.ip_configuration_name_association[count.index]
   backend_address_pool_id = azurerm_lb_backend_address_pool.load-balancer.id
 }
