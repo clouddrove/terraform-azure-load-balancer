@@ -147,7 +147,7 @@ Here is an example of how you can use this module in your inventory structure:
 | frontend\_private\_ip\_address\_allocation | (Optional) Frontend ip allocation type (Static or Dynamic) | `string` | `"Dynamic"` | no |
 | frontend\_subnet\_id | (Optional) Frontend subnet id to use when in private mode | `string` | `""` | no |
 | idle\_timeout\_in\_minutes | Specifies the timeout for the TCP idle connection. The value can be set between 4 and 60 minutes. | `number` | `10` | no |
-| ip\_configuration\_name\_association | (Required) Ip Configuration name for Network Interaface Association with Load Balancer. | `string` | `"Tcp"` | no |
+| ip\_configuration\_name\_association | (Required) Ip Configuration name for Network Interaface Association with Load Balancer. | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
 | ip\_count | Number of Public IP Addresses to create. | `number` | `0` | no |
 | ip\_version | The IP Version to use, IPv6 or IPv4. | `string` | `""` | no |
 | is\_enable\_backend\_pool | Backend Pool Configuration for the Load Balancer. | `bool` | `false` | no |
@@ -162,7 +162,7 @@ Here is an example of how you can use this module in your inventory structure:
 | name | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | nat\_protocol | (Required) The protocol of Load Balancer's NAT rule. | `string` | `"Tcp"` | no |
 | net\_count | Number of network Addresses to create. | `number` | `0` | no |
-| network\_interaface\_id\_association | (Required) Network Interaface id for Network Interface Association with Load Balancer. | `string` | `"Tcp"` | no |
+| network\_interaface\_id\_association | (Required) Network Interaface id for Network Interface Association with Load Balancer. | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
 | public\_ip\_enabled | Whether public IP is enabled. | `bool` | `false` | no |
 | public\_ip\_prefix\_id | If specified then public IP address allocated will be provided from the public IP prefix resource. | `string` | `null` | no |
 | read | Used when retrieving the Resource Group. | `string` | `"5m"` | no |
