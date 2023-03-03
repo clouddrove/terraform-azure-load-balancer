@@ -252,12 +252,12 @@ variable "is_enable_backend_pool" {
 
 variable "network_interaface_id_association" {
   description = "(Required) Network Interaface id for Network Interface Association with Load Balancer."
-  type        = string
-  default     = "Tcp"
+  type        = list(string)
+  default     = [""]
 }
 
 variable "ip_configuration_name_association" {
   description = "(Required) Ip Configuration name for Network Interaface Association with Load Balancer."
-  type        = string
-  default     = "Tcp"
+  type        = list(string)
+  default     = [""]
 }

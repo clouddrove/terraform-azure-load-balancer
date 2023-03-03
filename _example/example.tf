@@ -81,9 +81,9 @@ module "load-balancer" {
   ip_version        = "IPv4"
 
   # Backend Pool
-  is_enable_backend_pool            = false
-  network_interaface_id_association = ""
-  ip_configuration_name_association = ""
+  is_enable_backend_pool = false
+  # network_interaface_id_association = ""
+  # ip_configuration_name_association = ""
 
   remote_port = {
     ssh   = ["Tcp", "22"]
