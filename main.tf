@@ -52,8 +52,12 @@ resource "azurerm_lb" "load-balancer" {
   sku                 = var.lb_sku
 
   frontend_ip_configuration {
-    name                 = var.frontend_name
-    public_ip_address_id = try(azurerm_public_ip.default[0].id, "")
+    name                          = var.frontend_name
+    private_ip_address            = var.frontend_private_ip_address
+    private_ip_address_allocation = var.frontend_private_ip_address_allocation
+    private_ip_address_version    = var.frontend_private_ip_address_version
+    public_ip_address_id          = try(azurerm_public_ip.default[0].id, "")
+    subnet_id                     = var.frontend_subnet_id
   }
 
   timeouts {
