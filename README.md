@@ -145,6 +145,7 @@ Here is an example of how you can use this module in your inventory structure:
 | frontend\_name | (Required) Specifies the name of the frontend ip configuration. | `string` | `"myip"` | no |
 | frontend\_private\_ip\_address | (Optional) Private ip address to assign to frontend. Use it with type = private | `string` | `""` | no |
 | frontend\_private\_ip\_address\_allocation | (Optional) Frontend ip allocation type (Static or Dynamic) | `string` | `"Dynamic"` | no |
+| frontend\_private\_ip\_address\_version | (Optional) The version of IP that the Private IP Address is. Possible values are `IPv4` or `IPv6`. | `string` | `null` | no |
 | frontend\_subnet\_id | (Optional) Frontend subnet id to use when in private mode | `string` | `""` | no |
 | idle\_timeout\_in\_minutes | Specifies the timeout for the TCP idle connection. The value can be set between 4 and 60 minutes. | `number` | `10` | no |
 | ip\_configuration\_name\_association | (Required) Ip Configuration name for Network Interaface Association with Load Balancer. | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
