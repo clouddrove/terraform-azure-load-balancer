@@ -27,7 +27,7 @@ module "vnet" {
 
 module "subnet" {
   source  = "clouddrove/subnet/azure"
-  version = "1.0.1"
+  version = "1.0.2"
 
   name                 = "app"
   environment          = "test"
