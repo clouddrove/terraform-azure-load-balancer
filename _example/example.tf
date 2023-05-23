@@ -34,12 +34,12 @@ module "subnet" {
   virtual_network_name = join("", module.vnet.vnet_name)
 
   #subnet
-  default_name_subnet = true
-  subnet_names        = ["subnet1"]
-  subnet_prefixes     = ["10.0.1.0/24"]
+  subnet_names    = ["subnet1"]
+  subnet_prefixes = ["10.0.1.0/24"]
 
   # route_table
-  enable_route_table = false
+  enable_route_table = true
+  route_table_name   = "default_subnet"
   routes = [
     {
       name           = "rt-test"
@@ -47,6 +47,7 @@ module "subnet" {
       next_hop_type  = "Internet"
     }
   ]
+
 }
 
 
