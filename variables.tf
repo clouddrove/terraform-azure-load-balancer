@@ -32,7 +32,7 @@ variable "managedby" {
 
 variable "label_order" {
   type        = list(any)
-  default     = []
+  default     = ["name", "environment"]
   description = "Label order, e.g. `name`,`application`."
 }
 variable "repository" {
@@ -249,7 +249,7 @@ variable "nat_protocol" {
   default     = "Tcp"
 }
 
-## Load Balancer Backend Pool 
+## Load Balancer Backend Pool
 
 variable "is_enable_backend_pool" {
   type        = bool
