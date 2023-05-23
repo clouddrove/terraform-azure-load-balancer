@@ -152,7 +152,7 @@ Here is an example of how you can use this module in your inventory structure:
 | ip\_count | Number of Public IP Addresses to create. | `number` | `0` | no |
 | ip\_version | The IP Version to use, IPv6 or IPv4. | `string` | `""` | no |
 | is\_enable\_backend\_pool | Backend Pool Configuration for the Load Balancer. | `bool` | `false` | no |
-| label\_order | Label order, e.g. `name`,`application`. | `list(any)` | `[]` | no |
+| label\_order | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
 | lb\_port | Protocols to be used for lb rules. Format as [frontend\_port, protocol, backend\_port] | `map(any)` | `{}` | no |
 | lb\_probe | (Optional) Protocols to be used for lb health probes. Format as [protocol, port, request\_path] | `map(any)` | `{}` | no |
 | lb\_probe\_interval | Interval in seconds the load balancer health probe rule does a check | `number` | `5` | no |
