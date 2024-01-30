@@ -20,7 +20,7 @@ module "vnet" {
   environment         = "test"
   resource_group_name = module.resource_group.resource_group_name
   location            = module.resource_group.resource_group_location
-  address_spaces       = ["10.0.0.0/16"]
+  address_spaces      = ["10.0.0.0/16"]
 }
 
 module "subnet" {
@@ -31,7 +31,7 @@ module "subnet" {
   environment          = "test"
   resource_group_name  = module.resource_group.resource_group_name
   location             = module.resource_group.resource_group_location
-  virtual_network_name =  module.vnet.vnet_name
+  virtual_network_name = module.vnet.vnet_name
 
   #subnet
   subnet_names    = ["subnet1"]
