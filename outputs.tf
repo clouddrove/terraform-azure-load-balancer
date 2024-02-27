@@ -15,20 +15,20 @@ output "azurerm_lb_id" {
 
 output "azurerm_lb_nat_rule_ids" {
   description = "the ids for the azurerm_lb_nat_rule resources"
-  value       = azurerm_lb_nat_rule.load-balancer[*].id
+  value       = try(azurerm_lb_nat_rule.load-balancer[*].id, null)
 }
 
 output "azurerm_lb_probe_ids" {
   description = "the ids for the azurerm_lb_probe resources"
-  value       = azurerm_lb_probe.load-balancer[*].id
+  value       = try(azurerm_lb_probe.load-balancer[*].id, null)
 }
 
 output "azurerm_public_ip_address" {
   description = "the ip address for the azurerm_lb_public_ip resource"
-  value       = azurerm_public_ip.default[*].ip_address
+  value       = try(azurerm_public_ip.default[0].ip_address, null)
 }
 
 output "azurerm_public_ip_id" {
   description = "the id for the azurerm_lb_public_ip resource"
-  value       = azurerm_public_ip.default[*].id
+  value       = azurerm_public_ip.default[0].id
 }

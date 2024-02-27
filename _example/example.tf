@@ -65,13 +65,13 @@ module "load-balancer" {
 
   # Load Balancer
   frontend_name                          = "mypublicIP"
-  frontend_private_ip_address_allocation = "Static"
+  frontend_private_ip_address_allocation = "static"
   frontend_private_ip_address            = "10.0.1.6"
   lb_sku                                 = "Standard"
 
   #   Public IP
   ip_count          = 1
-  allocation_method = "Static"
+  allocation_method = "static"
   sku               = "Standard"
   nat_protocol      = "Tcp"
   public_ip_enabled = true

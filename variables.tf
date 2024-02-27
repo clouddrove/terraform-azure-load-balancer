@@ -198,7 +198,7 @@ variable "frontend_private_ip_address_version" {
 variable "frontend_subnet_id" {
   description = "(Optional) Frontend subnet id to use when in private mode"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "lb_port" {
