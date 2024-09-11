@@ -5,7 +5,7 @@ on:
   pull_request:
   workflow_dispatch:
 jobs:
-  tf-checks-aws-managed-example:
+  tf-checks-azure-managed-example:
     uses: clouddrove/github-shared-workflows/.github/workflows/tf-checks.yml@master
     with:
       working_directory: './examples/'

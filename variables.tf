@@ -6,11 +6,6 @@ variable "name" {
   description = "Name  (e.g. `app` or `cluster`)."
 }
 
-variable "application" {
-  type        = string
-  default     = ""
-  description = "Application (e.g. `cd` or `clouddrove`)."
-}
 
 variable "environment" {
   type        = string
@@ -18,11 +13,6 @@ variable "environment" {
   description = "Environment (e.g. `prod`, `dev`, `staging`)."
 }
 
-variable "tags" {
-  type        = map(any)
-  default     = {}
-  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
-}
 
 variable "managedby" {
   type        = string
@@ -49,11 +39,7 @@ variable "ip_count" {
   description = "Number of Public IP Addresses to create."
 }
 
-variable "net_count" {
-  type        = number
-  default     = 0
-  description = "Number of network Addresses to create."
-}
+
 
 variable "enabled" {
   type        = bool
@@ -170,29 +156,10 @@ variable "edge_zone" {
   default     = null
 }
 
-variable "frontend_name" {
-  description = "(Required) Specifies the name of the frontend ip configuration."
-  type        = string
-  default     = "myip"
-}
 
-variable "frontend_private_ip_address" {
-  description = "(Optional) Private ip address to assign to frontend. Use it with type = private"
-  type        = string
-  default     = ""
-}
 
-variable "frontend_private_ip_address_allocation" {
-  description = "(Optional) Frontend ip allocation type (Static or Dynamic)"
-  type        = string
-  default     = "Dynamic"
-}
 
-variable "frontend_private_ip_address_version" {
-  description = "(Optional) The version of IP that the Private IP Address is. Possible values are `IPv4` or `IPv6`."
-  type        = string
-  default     = null
-}
+
 
 
 variable "frontend_subnet_id" {
