@@ -65,10 +65,10 @@ module "load-balancer" {
   location            = module.resource_group.resource_group_location
 
   # Load Balancer
-  frontend_name                          = "mypublicIP"
- # frontend_private_ip_address_allocation = "static"   #if we are not using private ip on frontend lb
- # frontend_private_ip_address            = "10.0.1.6"
-  lb_sku                                 = "Standard"
+  frontend_name = "mypublicIP"
+  # frontend_private_ip_address_allocation = "static"   #if we are not using private ip on frontend lb
+  # frontend_private_ip_address            = "10.0.1.6"
+  lb_sku = "Standard"
 
   #   Public IP
   ip_count          = 1
