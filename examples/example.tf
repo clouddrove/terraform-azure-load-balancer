@@ -1,5 +1,5 @@
 provider "azurerm" {
-  subscription_id = "068245d4-3c94-42fe-9c4d-9e5e1cabc60c"
+  subscription_id = "000000-11111-1223-XXX-XXXXXXXXXXXX"
   features {}
 }
 
@@ -66,8 +66,8 @@ module "load-balancer" {
 
   # Load Balancer
   frontend_name                          = "mypublicIP"
-  frontend_private_ip_address_allocation = "static"
-  frontend_private_ip_address            = "10.0.1.6"
+ # frontend_private_ip_address_allocation = "static"   #if we are not using private ip on frontend lb
+ # frontend_private_ip_address            = "10.0.1.6"
   lb_sku                                 = "Standard"
 
   #   Public IP
