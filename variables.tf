@@ -238,18 +238,7 @@ variable "ip_configuration_name_association" {
 
 variable "frontend_name" {
   type        = string
-  description = "(Optional) Frontend name for the load balancer."
+  description = "Frontend name for the load balancer."
   default     = null
 }
 
-variable "frontend_private_ip_address_allocation" {
-  type        = string
-  description = "(Optional) Private IP allocation method for the frontend. Possible values are 'Static' or 'Dynamic'."
-  default     = "Dynamic"
-}
-
-variable "frontend_private_ip_address" {
-  type        = string
-  description = "(Optional) Static Private IP Address for the frontend."
-  default     = null
-}
