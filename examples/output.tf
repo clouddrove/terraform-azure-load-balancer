@@ -42,3 +42,7 @@ output "subnet_address_prefix" {
   value       = module.subnet.default_subnet_name
   description = "The subnet address prefix."
 }
+
+output "firewall_id" {
+  value = azurerm_firewall.firewall[0].id
+}
