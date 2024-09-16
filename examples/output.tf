@@ -43,6 +43,3 @@ output "subnet_address_prefix" {
   description = "The subnet address prefix."
 }
 
-output "firewall_id" {
-  value = azurerm_firewall.firewall[0].id
-}
