@@ -57,4 +57,3 @@
 | azurerm\_lb\_probe\_ids | the ids for the azurerm\_lb\_probe resources |
 | azurerm\_public\_ip\_address | the ip address for the azurerm\_lb\_public\_ip resource |
 | azurerm\_public\_ip\_id | the id for the azurerm\_lb\_public\_ip resource |
-
