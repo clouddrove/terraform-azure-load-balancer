@@ -6,22 +6,11 @@ variable "name" {
   description = "Name  (e.g. `app` or `cluster`)."
 }
 
-variable "application" {
-  type        = string
-  default     = ""
-  description = "Application (e.g. `cd` or `clouddrove`)."
-}
 
 variable "environment" {
   type        = string
   default     = ""
   description = "Environment (e.g. `prod`, `dev`, `staging`)."
-}
-
-variable "tags" {
-  type        = map(any)
-  default     = {}
-  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
 }
 
 variable "managedby" {
@@ -47,12 +36,6 @@ variable "ip_count" {
   type        = number
   default     = 0
   description = "Number of Public IP Addresses to create."
-}
-
-variable "net_count" {
-  type        = number
-  default     = 0
-  description = "Number of network Addresses to create."
 }
 
 variable "enabled" {
