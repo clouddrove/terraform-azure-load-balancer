@@ -3,7 +3,6 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | allocation\_method | Defines the allocation method for this IP address. Possible values are Static or Dynamic. | `string` | `""` | no |
-| application | Application (e.g. `cd` or `clouddrove`). | `string` | `""` | no |
 | backendpoolname | (Required) Specifies the name of the Backend Address Pool. Changing this forces a new resource to be created. | `string` | `"test-backendpool"` | no |
 | create | Used when creating the Resource Group. | `string` | `"60m"` | no |
 | ddos\_protection\_mode | (Optional) The DDoS protection mode of the public IP. Possible values are `Disabled`, `Enabled`, and `VirtualNetworkInherited`. Defaults to `VirtualNetworkInherited`. | `string` | `"VirtualNetworkInherited"` | no |
@@ -32,7 +31,6 @@
 | managedby | ManagedBy, eg 'CloudDrove' or 'AnmolNagpal'. | `string` | `"anmol@clouddrove.com"` | no |
 | name | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | nat\_protocol | (Required) The protocol of Load Balancer's NAT rule. | `string` | `"Tcp"` | no |
-| net\_count | Number of network Addresses to create. | `number` | `0` | no |
 | network\_interaface\_id\_association | (Required) Network Interaface id for Network Interface Association with Load Balancer. | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
 | public\_ip\_enabled | Whether public IP is enabled. | `bool` | `false` | no |
 | public\_ip\_prefix\_id | If specified then public IP address allocated will be provided from the public IP prefix resource. | `string` | `null` | no |
@@ -42,7 +40,6 @@
 | resource\_group\_name | The name of the resource group in which to create the virtual network. | `string` | `""` | no |
 | reverse\_fqdn | A fully qualified domain name that resolves to this public IP address. If the reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domain to the reverse FQDN. | `string` | `""` | no |
 | sku | The SKU of the Public IP. Accepted values are Basic and Standard. Defaults to Basic. | `string` | `"Basic"` | no |
-| tags | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | `map(any)` | `{}` | no |
 | update | Used when updating the Resource Group. | `string` | `"60m"` | no |
 | zones | A collection containing the availability zone to allocate the Public IP in. | `list(any)` | `null` | no |
 
