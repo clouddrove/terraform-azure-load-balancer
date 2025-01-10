@@ -140,6 +140,7 @@ module "log-analytics" {
 
 module "virtual-machine" {
   source              = "clouddrove/virtual-machine/azure"
+  version             = "2.0.3"
   name                = "app"
   environment         = "test"
   resource_group_name = module.resource_group.resource_group_name
