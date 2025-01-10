@@ -139,7 +139,7 @@ module "log-analytics" {
 
 
 module "virtual-machine" {
-  source              = "git@github.com:clouddrove/terraform-azure-virtual-machine.git"
+  source  = "clouddrove/virtual-machine/azure"
   name                = "app"
   environment         = "test"
   resource_group_name = module.resource_group.resource_group_name
