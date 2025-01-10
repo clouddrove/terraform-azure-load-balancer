@@ -90,6 +90,7 @@ variable "public_ip_enabled" {
   description = "Whether public IP is enabled."
 }
 
+
 variable "sku" {
   type        = string
   default     = "Basic"

@@ -1,12 +1,12 @@
 provider "azurerm" {
-  subscription_id = "1ac2caa4-336e-4daa-b8f1-0fbabe2d4b11"
   features {}
+  subscription_id = "000000-11111-1223-XXX-XXXXXXXXXXXX"
 }
 
 provider "azurerm" {
   features {}
   alias           = "peer"
-  subscription_id = "1ac2caa4-336e-4daa-b8f1-0fbabe2d4b11" #change this to other subscription if dns hosted in other subscription.
+  subscription_id = "000000-11111-1223-XXX-XXXXXXXXXXXX" #change this to other subscription if dns hosted in other subscription.
 }
 
 module "resource_group" {
@@ -130,7 +130,7 @@ module "log-analytics" {
   name                             = "app1"
   environment                      = "test"
   label_order                      = ["name", "environment"]
-  create_log_analytics_workspace   = false
+  create_log_analytics_workspace   = true
   log_analytics_workspace_sku      = "PerGB2018"
   resource_group_name              = module.resource_group.resource_group_name
   log_analytics_workspace_location = module.resource_group.resource_group_location
@@ -161,7 +161,7 @@ module "virtual-machine" {
   public_ip_enabled = true
   ## Virtual Machine
   vm_size                    = "Standard_B1s"
-  admin_password             = "cricket2001#"
+  public_key                 = "ssh-rsa AAAA"
   admin_username             = "ubuntu"
   caching                    = "ReadWrite"
   disk_size_gb               = 30
@@ -169,7 +169,7 @@ module "virtual-machine" {
   image_offer                = "0001-com-ubuntu-server-jammy"
   image_sku                  = "22_04-lts-gen2"
   image_version              = "latest"
-  enable_disk_encryption_set = false
+  enable_disk_encryption_set = true
   key_vault_id               = module.key_vault.id
   data_disks = [
     {
@@ -196,7 +196,7 @@ module "virtual-machine" {
 
 
 module "load-balancer" {
-  source = "../"
+  source = "../.."
 
   #   Labels
   name        = "app"
@@ -211,9 +211,7 @@ module "load-balancer" {
   frontend_name = "mypublicIP"
   # frontend_private_ip_address_allocation = "static"
   # # frontend_private_ip_address            = "10.0.1.6"
-  lb_sku                            = "Standard"
-  network_interaface_id_association = module.virtual-machine.network_interface_id
-
+  lb_sku = "Standard"
   #   Public IP
   ip_count          = 1
   allocation_method = "static"
@@ -223,8 +221,8 @@ module "load-balancer" {
   ip_version        = "IPv4"
 
   # Backend Pool
-  is_enable_backend_pool = true
-  # network_interaface_id_association = ""
+  is_enable_backend_pool            = true
+  network_interaface_id_association = module.virtual-machine.network_interface_id
   ip_configuration_name_association = ["app-test-ip-config-1"]
 
 
