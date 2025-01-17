@@ -103,9 +103,15 @@ module "key_vault" {
   subnet_id                   = module.subnet.default_subnet_id[0]
   enable_rbac_authorization   = true
   enabled_for_disk_encryption = false
+
   #private endpoint
   enable_private_endpoint = false
-  network_acls            = null
+  network_acls = {
+    bypass         = "AzureServices"
+    default_action = "Deny"
+    ip_rules       = ["0.0.0.0/0"]
+  }
+
   ########Following to be uncommnented only when using DNS Zone from different subscription along with existing DNS zone.
 
   # diff_sub                                      = true
@@ -160,12 +166,10 @@ module "virtual-machine" {
   network_interface_sg_enabled = true
   network_security_group_id    = module.security_group.id
   ## Public IP
-  public_ip_enabled               = true
-  disable_password_authentication = false
-  admin_password                  = "cricket2001$"
+  public_ip_enabled = true
   ## Virtual Machine
-  vm_size                    = "Standard_B1s"
   public_key                 = "ssh-rsa AAAA"
+  vm_size                    = "Standard_B1s"
   admin_username             = "ubuntu"
   caching                    = "ReadWrite"
   disk_size_gb               = 30
