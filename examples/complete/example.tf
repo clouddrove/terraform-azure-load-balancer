@@ -1,12 +1,12 @@
 provider "azurerm" {
   features {}
-  subscription_id = "000000-11111-1223-XXX-XXXXXXXXXXXX"
+  subscription_id = "1ac2caa4-336e-4daa-b8f1-0fbabe2d4b11"
 }
 
 provider "azurerm" {
   features {}
   alias           = "peer"
-  subscription_id = "000000-11111-1223-XXX-XXXXXXXXXXXX" #change this to other subscription if dns hosted in other subscription.
+  subscription_id = "1ac2caa4-336e-4daa-b8f1-0fbabe2d4b11" #change this to other subscription if dns hosted in other subscription.
 }
 
 module "resource_group" {
@@ -73,7 +73,7 @@ module "security_group" {
       priority                   = 101
       access                     = "Allow"
       protocol                   = "Tcp"
-      source_address_prefix      = "0.0.0.0/0"
+      source_address_prefix      = "10.0.1.0"
       source_port_range          = "*"
       destination_address_prefix = "0.0.0.0/0"
       destination_port_range     = "22"
@@ -145,6 +145,7 @@ module "virtual-machine" {
   environment         = "test"
   resource_group_name = module.resource_group.resource_group_name
   location            = module.resource_group.resource_group_location
+  sku                 = "Standard"
   is_vm_linux         = true
   user_object_id = {
     "user1" = {
@@ -159,7 +160,9 @@ module "virtual-machine" {
   network_interface_sg_enabled = true
   network_security_group_id    = module.security_group.id
   ## Public IP
-  public_ip_enabled = true
+  public_ip_enabled               = true
+  disable_password_authentication = false
+  admin_password                  = "cricket2001$"
   ## Virtual Machine
   vm_size                    = "Standard_B1s"
   public_key                 = "ssh-rsa AAAA"
@@ -207,12 +210,12 @@ module "load-balancer" {
   enabled             = true
   resource_group_name = module.resource_group.resource_group_name
   location            = module.resource_group.resource_group_location
+  lb_sku              = "Standard"
 
   # Load Balancer
   frontend_name = "mypublicIP"
   # frontend_private_ip_address_allocation = "static"
   # # frontend_private_ip_address            = "10.0.1.6"
-  lb_sku = "Standard"
   #   Public IP
   ip_count          = 1
   allocation_method = "static"
