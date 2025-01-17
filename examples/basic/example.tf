@@ -1,7 +1,7 @@
 provider "azurerm" {
   features {}
+  subscription_id = "000000-11111-1223-XXX-XXXXXXXXXXXX"
 }
-
 module "resource_group" {
   source  = "clouddrove/resource-group/azure"
   version = "1.0.2"
@@ -50,9 +50,8 @@ module "subnet" {
 
 }
 
-
 module "load-balancer" {
-  source = "../"
+  source = "../.."
 
   #   Labels
   name        = "app"
@@ -64,10 +63,10 @@ module "load-balancer" {
   location            = module.resource_group.resource_group_location
 
   # Load Balancer
-  frontend_name                          = "mypublicIP"
-  frontend_private_ip_address_allocation = "static"
-  frontend_private_ip_address            = "10.0.1.6"
-  lb_sku                                 = "Standard"
+  frontend_name = "mypublicIP"
+  # frontend_private_ip_address_allocation = "static"
+  # frontend_private_ip_address            = "10.0.1.6"
+  lb_sku = "Standard"
 
   #   Public IP
   ip_count          = 1
@@ -80,7 +79,7 @@ module "load-balancer" {
   # Backend Pool
   is_enable_backend_pool = false
   # network_interaface_id_association = ""
-  # ip_configuration_name_association = ""
+
 
   remote_port = {
     ssh   = ["Tcp", "22"]
@@ -99,3 +98,4 @@ module "load-balancer" {
 
   depends_on = [module.resource_group]
 }
+
