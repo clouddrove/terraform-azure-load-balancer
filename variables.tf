@@ -90,9 +90,10 @@ variable "public_ip_enabled" {
   description = "Whether public IP is enabled."
 }
 
+
 variable "sku" {
   type        = string
-  default     = "Basic"
+  default     = "Standard"
   description = "The SKU of the Public IP. Accepted values are Basic and Standard. Defaults to Basic."
 }
 
@@ -211,7 +212,7 @@ variable "lb_probe_unhealthy_threshold" {
 variable "lb_sku" {
   description = "(Optional) The SKU of the Azure Load Balancer. Accepted values are Basic and Standard."
   type        = string
-  default     = "Basic"
+  default     = "Standard"
 }
 
 variable "remote_port" {

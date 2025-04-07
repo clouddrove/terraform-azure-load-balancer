@@ -23,12 +23,13 @@ output "azurerm_lb_probe_ids" {
   value       = try(azurerm_lb_probe.load-balancer[*].id, null)
 }
 
-output "azurerm_public_ip_address" {
-  description = "the ip address for the azurerm_lb_public_ip resource"
-  value       = try(azurerm_public_ip.default[0].ip_address, null)
+output "azurerm_lb_ip_address" {
+  description = "The Public IP address for the Load Balancer"
+  value       = var.public_ip_enabled ? azurerm_public_ip.default[0].id : null
 }
 
 output "azurerm_public_ip_id" {
   description = "the id for the azurerm_lb_public_ip resource"
-  value       = azurerm_public_ip.default[0].id
+  value       = var.public_ip_enabled ? azurerm_public_ip.default[0].id : null
 }
+
