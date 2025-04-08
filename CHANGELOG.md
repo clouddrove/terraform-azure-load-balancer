@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2025-04-08
+### :memo: Documentation Changes
+- [`859352e`](https://github.com/clouddrove/terraform-azure-load-balancer/commit/859352e8d29acff0234e83f564a93d5eaa851c95) - update CHANGELOG.md for 1.1.1 *(commit by [@clouddrove-ci](https://github.com/clouddrove-ci))*
+
+
 ## [1.1.1] - 2025-04-07
 ### :bug: Bug Fixes
 - [`4baa70f`](https://github.com/clouddrove/terraform-azure-load-balancer/commit/4baa70f6f06c5a9f8285249b2e2d146f887b45a0) - change in count condition *(commit by [@Rupalgw](https://github.com/Rupalgw))*
@@ -18,3 +23,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [`d30fab3`](https://github.com/clouddrove/terraform-azure-load-balancer/commit/d30fab39f61fe97d7d07cf194cc89c3f4e0fa935) - added tfsec workflow *(commit by [@anmolnagpal](https://github.com/anmolnagpal))*
 
 [1.1.1]: https://github.com/clouddrove/terraform-azure-load-balancer/compare/1.0.1...1.1.1
+[1.1.2]: https://github.com/clouddrove/terraform-azure-load-balancer/compare/1.1.1...1.1.2
