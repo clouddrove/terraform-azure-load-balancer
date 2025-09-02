@@ -252,3 +252,9 @@ variable "ip_configuration_name_association" {
   type        = list(string)
   default     = [""]
 }
+
+variable "floating_ip_enabled" {
+  description = "Enable or disable floating IP for load balancer to preserve original destination IP address"
+  type        = bool
+  default     = false
+}
