@@ -258,9 +258,3 @@ variable "floating_ip_enabled" {
   type        = bool
   default     = false
 }
-
-variable "idle_timeout_in_minutes" {
-  description = "Maximum time in minutes that a connection can remain idle before the load balancer closes it"
-  type        = number
-  default     = 5
-}
