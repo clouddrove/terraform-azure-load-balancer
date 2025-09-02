@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] - 2025-09-02
+### :sparkles: New Features
+- [`4b6469c`](https://github.com/clouddrove/terraform-azure-load-balancer/commit/4b6469ccb6f2bfaf5f02c0d2af9faf51d5e3ef11) - Updated Load Balancer Depreciated Attribute *(commit by [@vedkops](https://github.com/vedkops))*
+
+### :memo: Documentation Changes
+- [`ce6eb4f`](https://github.com/clouddrove/terraform-azure-load-balancer/commit/ce6eb4f9b14bb9434451496399100cc3e16d6e66) - update CHANGELOG.md for 1.1.2 *(commit by [@clouddrove-ci](https://github.com/clouddrove-ci))*
+
+
 ## [1.1.2] - 2025-04-08
 ### :memo: Documentation Changes
 - [`859352e`](https://github.com/clouddrove/terraform-azure-load-balancer/commit/859352e8d29acff0234e83f564a93d5eaa851c95) - update CHANGELOG.md for 1.1.1 *(commit by [@clouddrove-ci](https://github.com/clouddrove-ci))*
@@ -24,3 +32,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [1.1.1]: https://github.com/clouddrove/terraform-azure-load-balancer/compare/1.0.1...1.1.1
 [1.1.2]: https://github.com/clouddrove/terraform-azure-load-balancer/compare/1.1.1...1.1.2
+[1.1.3]: https://github.com/clouddrove/terraform-azure-load-balancer/compare/1.1.2...1.1.3
