@@ -252,3 +252,15 @@ variable "ip_configuration_name_association" {
   type        = list(string)
   default     = [""]
 }
+
+variable "floating_ip_enabled" {
+  description = "Enable or disable floating IP for load balancer to preserve original destination IP address"
+  type        = bool
+  default     = false
+}
+
+variable "idle_timeout_in_minutes" {
+  description = "Maximum time in minutes that a connection can remain idle before the load balancer closes it"
+  type        = number
+  default     = 5
+}
