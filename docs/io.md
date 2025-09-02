@@ -11,6 +11,7 @@
 | edge\_zone | (Optional) Specifies the Edge Zone within the Azure Region where this Public IP and Load Balancer should exist. Changing this forces new resources to be created. | `string` | `null` | no |
 | enabled | Flag to control the module creation. | `bool` | `false` | no |
 | environment | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
+| floating\_ip\_enabled | Enable or disable floating IP for load balancer to preserve original destination IP address | `bool` | `false` | no |
 | frontend\_name | (Required) Specifies the name of the frontend ip configuration. | `string` | `"myip"` | no |
 | frontend\_private\_ip\_address | (Optional) Private ip address to assign to frontend. Use it with type = private | `string` | `""` | no |
 | frontend\_private\_ip\_address\_allocation | (Optional) Frontend ip allocation type (Static or Dynamic) | `string` | `"Dynamic"` | no |
